@@ -1,8 +1,10 @@
 // =====================================================
 // ABUFAUZAN TECH Cooperative Management Platform (CMP)
-// Main Application Entry Point
+// Authentication Module
 // =====================================================
 
-import "./auth.js";
+import { auth } from "./firebase.js";
 
-console.log("CMP Main Application Loaded");
+export { auth };
+
+console.log("Authentication Module Loaded");
