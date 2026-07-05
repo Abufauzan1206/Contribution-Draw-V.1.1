@@ -68,22 +68,6 @@ const pages = {
 const navButtons = document.querySelectorAll(".nav-btn");
 
 // =======================================
-// Splash Screen
-// =======================================
-
-window.addEventListener("load", () => {
-
-    setTimeout(() => {
-
-        splashScreen.style.display = "none";
-
-        app.classList.remove("hidden");
-
-    }, 2000);
-
-});
-
-// =======================================
 // Google Authentication
 // =======================================
 
