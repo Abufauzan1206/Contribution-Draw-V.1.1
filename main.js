@@ -9,6 +9,7 @@ import "./drawEngine.js";
 import "./navigation.js";
 import "./splash.js";
 import "./admin.js";
+import "./members.js";
 
 console.log("CMP Main Application Loaded");
 console.log("Authentication Ready:", auth);
