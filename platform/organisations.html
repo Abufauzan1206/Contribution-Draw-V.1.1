@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizations - CMP</title>
+    <link rel="stylesheet" href="css/platform.css">
+</head>
+<body>
 
+<header>
+    <h1>Organization Management</h1>
+</header>
+
+<main>
+
+<form id="organizationForm">
+
+    <label>Organization Name</label>
+    <input
+        type="text"
+        id="organizationName"
+        required>
+
+    <label>Email</label>
+    <input
+        type="email"
+        id="organizationEmail"
+        required>
+
+    <label>Phone</label>
+    <input
+        type="text"
+        id="organizationPhone">
+
+    <button type="submit">
+        Register Organization
+    </button>
+
+</form>
+
+<div id="message"></div>
+
+</main>
+
+<script type="module" src="js/organizations.js"></script>
+
+</body>
+  </html>
