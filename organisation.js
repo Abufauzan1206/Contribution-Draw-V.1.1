@@ -1,18 +1,90 @@
 // =====================================================
-// ABUFAUZAN TECH Cooperative Management Platform (CMP)
-// Organization Management Module
+// CMP - Organization Management (REAL IMPLEMENTATION)
 // =====================================================
 
-// Organization module version
-const ORGANIZATION_MODULE_VERSION = "1.0.0";
+import { db, auth } from "./firebase.js";
+import {
+    doc,
+    setDoc,
+    getDoc,
+    serverTimestamp
+} from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
 
-console.log("Organization Management Module Loaded");
-console.log("Version:", ORGANIZATION_MODULE_VERSION);
+// Create Organization
+export async function createOrganization(orgName) {
 
-// Future Features
-// - Create Organization
-// - Join Organization
-// - Organization Profile
-// - Super Admin Management
-// - Admin Management
-// - Organization Settings
+    const user = auth.currentUser;
+
+    if (!user) {
+        throw new Error("User not authenticated");
+    }
+
+    // Generate Org ID
+    const orgId = "ORG_" + Date.now();
+
+    const orgRef = doc(db, "organizations", orgId);
+
+    const orgData = {
+        profile: {
+            name: orgName,
+            createdBy: user.uid,
+            createdAt: serverTimestamp(),
+            status: "active"
+        },
+
+        roles: {
+            superAdmin: [user.uid],
+            admins: []
+        },
+
+        settings: {
+            maxQueueGroupSize: 12,
+            contributionRules: {
+                drawEnabled: true,
+                queueEnabled: true
+            }
+        },
+
+        members: {
+            [user.uid]: {
+                uid: user.uid,
+                email: user.email,
+                role: "superAdmin",
+                joinedAt: serverTimestamp()
+            }
+        },
+
+        draw: {},
+        queue: {},
+        donations: {},
+        investment: {
+            pool: 0,
+            members: {},
+            externalInvestors: {}
+        },
+
+        loans: {},
+        ledger: {},
+        payments: {},
+        announcements: []
+    };
+
+    await setDoc(orgRef, orgData);
+
+    console.log("Organization created:", orgId);
+
+    return orgId;
+}
+
+// Get Organization
+export async function getOrganization(orgId) {
+
+    const orgRef = doc(db, "organizations", orgId);
+    const snap = await getDoc(orgRef);
+
+    if (!snap.exists()) {
+        throw new Error("Organization not found");
+    }
+
+    return snap.data();
+}
