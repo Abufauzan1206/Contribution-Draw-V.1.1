@@ -23,4 +23,44 @@ async function loadDashboard() {
 
 }
 
+function setupNavigation() {
+
+    document.getElementById("btnOrganizations")
+        .addEventListener("click", () => {
+
+            window.location.href = "organizations.html";
+
+        });
+
+    document.getElementById("btnLicenses")
+        .addEventListener("click", () => {
+
+            window.location.href = "licenses.html";
+
+        });
+
+    document.getElementById("btnSubscriptions")
+        .addEventListener("click", () => {
+
+            window.location.href = "subscriptions.html";
+
+        });
+
+    document.getElementById("btnAnnouncements")
+        .addEventListener("click", () => {
+
+            window.location.href = "announcements.html";
+
+        });
+
+    document.getElementById("btnSupport")
+        .addEventListener("click", () => {
+
+            window.location.href = "support.html";
+
+        });
+
+}
+
 loadDashboard();
+setupNavigation();
