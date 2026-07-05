@@ -14,6 +14,7 @@ import "./ledger.js";
 import "./payments.js";
 import "./notifications.js";
 import "./communication.js";
+import "./reports.js";
 
 console.log("CMP Main Application Loaded");
 console.log("Authentication Ready:", auth);
