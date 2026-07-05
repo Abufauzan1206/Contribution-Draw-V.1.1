@@ -31,7 +31,6 @@ const provider = new GoogleAuthProvider();
 // DOM Elements
 // =======================================
 
-const splashScreen = document.getElementById("splashScreen");
 const app = document.getElementById("app");
 
 const googleSignInBtn = document.getElementById("googleSignInBtn");
