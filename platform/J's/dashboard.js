@@ -1,4 +1,4 @@
-import { getPlatformStatistics } from "../../services/platformDashboardService.js";
+import { getPlatformStatistics } from "../../services/dashboard/platformDashboardService.js";
 
 async function loadDashboard() {
 
