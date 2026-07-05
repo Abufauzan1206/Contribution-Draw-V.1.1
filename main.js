@@ -6,6 +6,7 @@
 
 import { auth } from "./auth.js";
 import "./drawEngine.js";
+import "./navigation.js";
 
 console.log("CMP Main Application Loaded");
 console.log("Authentication Ready:", auth);
