@@ -5,6 +5,7 @@
 // =====================================================
 
 import { auth } from "./auth.js";
+import "./organization.js";
 import "./drawEngine.js";
 import "./navigation.js";
 import "./splash.js";
