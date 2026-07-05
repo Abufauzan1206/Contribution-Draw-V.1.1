@@ -52,20 +52,6 @@ const beneficiary2 = document.getElementById("beneficiary2");
 const saveBeneficiariesBtn = document.getElementById("saveBeneficiariesBtn");
 const beneficiaryStatus = document.getElementById("beneficiaryStatus");
 
-// =======================================
-// Pages
-// =======================================
-
-const pages = {
-    home: document.getElementById("homePage"),
-    draw: document.getElementById("drawPage"),
-    transparency: document.getElementById("transparencyPage"),
-    statistics: document.getElementById("statisticsPage"),
-    admin: document.getElementById("adminPage"),
-    about: document.getElementById("aboutPage")
-};
-
-const navButtons = document.querySelectorAll(".nav-btn");
 
 // =======================================
 // Google Authentication
