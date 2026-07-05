@@ -11,6 +11,7 @@ import "./splash.js";
 import "./admin.js";
 import "./members.js";
 import "./ledger.js";
+import "./payments.js";
 
 console.log("CMP Main Application Loaded");
 console.log("Authentication Ready:", auth);
