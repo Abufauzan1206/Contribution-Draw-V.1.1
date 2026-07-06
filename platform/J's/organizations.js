@@ -29,11 +29,17 @@ form.addEventListener("submit", async (event) => {
 
     } catch (error) {
 
-        console.error(error);
+    console.error(error);
 
-        document.getElementById("message").textContent =
-            "Registration failed.";
+    alert(
+        "Error: " +
+        error.code +
+        "\n\n" +
+        error.message
+    );
 
-    }
+    document.getElementById("message").textContent =
+        error.message;
 
+}
 });
